@@ -67,7 +67,7 @@ function setCenter(){
 }
 function refresh(){
      //construct data structure from the notes gotten from the server
-    var refresh = "/refresh/" + CURRENT_MAP_ID + "/";
+    var refresh = "/life/refresh";
     var jqxhr = $.get(refresh, function(data) {
      }).done(function(data) {
         parseNotes(data);
@@ -283,7 +283,7 @@ function initMap() {
          formData += "&latitude=" + String(clickedLat);
          formData += "&map_ID=" + String(CURRENT_MAP_ID);
          formData += "&note=" + String(note);
-         $.post('/postNote', formData, function(data){
+         $.post('/life/postNote', formData, function(data){
             $("#newNote").modal('hide');
             refresh();
          });
