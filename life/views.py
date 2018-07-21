@@ -15,7 +15,7 @@ def postnote(request):
     parsed = request.body.decode('utf-8')
     j = json.loads(parsed)
     count = 0
-    p = Pin(note = j['note'], pin_id = count, long = j['long'], lat = j['lat'])
+    p = Pin(note = j['note'], pin_id = count, long = j['long'], lat = j['lat'], name = j['name'])
     p.save()
     return HttpResponse('300')
   

@@ -22,8 +22,7 @@ $("#mapwrapper").width(window.innerWidth).height(window.innerHeight*.95);
 function parseNotes(data){
   for (var i=0; i < data.length; i++){
      var note = data[i].fields;
-    console.log(note);
-     var name = String(note.username); //wtf dude x2
+     var name = String(note.name); //wtf dude x2
      var latitude = parseFloat(note.lat);
      var longitude = parseFloat(note.long);
      var latlong = String(latitude)+ String(longitude);
@@ -279,11 +278,14 @@ function initMap() {
 
       $("#postnote").on("click", function(evt){
          var note = $("#note")["0"].value;
+         var name = $("#name")["0"].value;
+          console.log(name);
          note = note.trim();
          var formData = {
            note: String(note),
            long: clickedLong,
            lat: clickedLat,
+           name: name,
          }
          $.post('/life/postnote', JSON.stringify(formData), function(data){
             $("#newNote").modal('hide');

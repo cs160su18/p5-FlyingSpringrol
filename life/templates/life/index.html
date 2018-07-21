@@ -14,11 +14,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	</head>
-<div class="navbar" style="background-color: #3b5997;">
-        <p class="navbar-brand pull-right"><a href="/profile">Your profile</a></p>
-        <p class="navbar-brand pull-right"><a href="/feed">People</a></p>
-        <p class="navbar-brand pull-right"><a href="/landing">Featured</a></p>
-
+    <div class="navbar" style="background-color: #FABD3F;">
+        <p class="navbar-brand pull-right" style="color: white">Knowhere</p>
       </div>
     <div id = "mapwrapper"style="height: 600px; width: 1000px">
         <div id="map"style="height: 95%"></div>
@@ -91,7 +88,8 @@
 
 
    </div>
-
+<input type="text" class="map-query-control form-control" id="place-input" placeholder="Enter a query" autocomplete="off" style="">
+         
     <script src="{% static '/life/bootstrap.min.js' %}"></script>
     <script src="{% static '/life/map.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3bt6opXtgKxFUYVtlkjymkQTjxXZRWic&libraries=places&callback=initMap"
