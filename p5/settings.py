@@ -25,7 +25,7 @@ SECRET_KEY = '%#yv*5d73dv^#nt91vwbaf_&8(vshv9oj)1af9f2fb!6j=g3-#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', 'p5-FlyingSpringrol-aronowb14191029.codeanyapp.com']
 
 
 # Application definition

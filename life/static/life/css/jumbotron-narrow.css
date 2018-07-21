@@ -1,0 +1,269 @@
+/* Space out content a bit */
+/* for the scrollable - menu */
+.black{
+  color:black;
+}
+.img-crop{
+  object-fit: cover;
+}
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.col-centered{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.groupHolder{
+   width: 70%;
+   margin: 0 auto;
+}
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.black{
+  color: black;
+}
+
+.delete-button{
+  color: red;
+}
+.mapholder{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#drag-button1{
+  position: absolute;
+  top: 210px;
+  opacity: .8;
+  left: 330px; /* To be to the right of the list_container*/
+  width: 40px;
+  height: 40px;
+}
+#drag-button2{
+  position: absolute;
+  opacity: .8;
+  top: 260px;
+  left: 330px; /* To be to the right of the list_container*/
+  width: 40px;
+  height: 40px;
+}
+#drag-button3{
+  position: absolute;
+  opacity: .8;
+  top: 310px;
+  left: 330px; /* To be to the right of the list_container*/
+  width: 40px;
+  height: 40px;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 600px;
+    max-width: 200px;
+    min-width: 200px;
+    overflow-x: hidden;
+}
+
+.list-container{
+   position: absolute; 
+   top: 200px; 
+   left: 20px; 
+   z-index: 99;
+   background-color: rgba(255, 255, 255, 0.7);
+   border-radius: 4px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+}
+.map-query-control{
+  max-width: 800px;
+  margin-top: 20px;
+}
+.create-map-button{
+  background-color: #3b5997;
+  border-width: 0px;
+  border-height:0px;
+  border-color: white;
+  color: white;
+  font-size: 20px;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.ttf');
+}
+
+#bg {
+  background: url("https://www.nationalparks.org/sites/default/files/styles/wide_2x/public/shutterstock_142351951.jpg?itok=4VSjqdM1&timestamp=1474998760") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#facebook{
+  background-color: #3b5997;
+}
+h2 {
+   font-family: Dense;
+   color: white;
+}
+button{
+   font-family: Dense;
+   color: black;
+}
+h1{
+   font-size: 80px;
+   font-family: Dense;
+   color: white;
+}
+h3{
+   font-size: 40px;
+   font-family: Dense;
+   color: black;
+}
+h5{
+   font-family: Dense;
+   color: white;
+}
+h4{
+   font-family: Dense;
+   color: black;
+}
+textarea{
+   resize: none;
+}
+.removeButton{
+   background-color: #ff7070;
+
+}
+.error-field{
+   color: #ff7070;
+   padding-left: 15px;
+   padding-right: 15px;
+   background-color: #ff7070;
+}
+.error-box {
+   border-bottom: solid 10px #ff7070;
+}
+.row{
+   padding-top: 15px;
+   padding-bottom:15px;
+}
+.labelHeads{
+   background-color: #ffffff;
+}
+.mapbrowser{
+    align-self: flex-end;
+    border-top: 2px solid grey;
+    padding: 10px; 
+    background-color: #fcfcfc;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+#map {
+ height: 100%;
+}
+#mapwrapper{
+   height: 500px;
+   width: 800px;
+}
+/* Custom page header */
+.header {
+  border-bottom: 0px solid #e5e5e5;
+}
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+

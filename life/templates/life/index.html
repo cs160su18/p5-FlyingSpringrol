@@ -7,14 +7,95 @@
 		<title></title>
 
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="{% static '/life/vendors/bootstrap/css/bootstrap.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static '/life/css/main.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/life/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/life/css/jumbotron-narrow.css' %}" />
 
-		<script src="{% static '/life/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
-		<script src="{% static '/life/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	</head>
-	<body>
-		<!-- Your layout here -->
+<div class="navbar" style="background-color: #3b5997;">
+        <p class="navbar-brand pull-right"><a href="/profile">Your profile</a></p>
+        <p class="navbar-brand pull-right"><a href="/feed">People</a></p>
+        <p class="navbar-brand pull-right"><a href="/landing">Featured</a></p>
 
-	</body>
+      </div>
+    <div id = "mapwrapper"style="height: 600px; width: 1000px">
+        <div id="map"style="height: 95%"></div>
+    </div>
+      <div class= "drag-button-container">
+        <img src = "https://s3-us-west-2.amazonaws.com/badhorserecords/markerRed.png" draggable = "true" id = "drag-button1" class = "drag-button">
+
+      </div>
+
+       <div class="modal fade" id="newNote" tabindex="-1" role="dialog" aria-labelledby="newNote" aria-hidden="true">
+        <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Enter your note</h4>
+             </div>
+             <div class="modal-body">
+               <form id="noteForm" role="form">
+                 <input type="hidden" id="theme" name="theme" value="<%= theme %>"/>
+                 <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name">
+                 </div>
+                 <div class="form-group">
+                  <label for="note">note</label>
+                  <textarea class="form-control" id="note" rows = "5">
+                  </textarea>
+                 </div>
+             </div>
+             <div class="modal-footer">
+               <button id="postNote" type="button" class="btn btn-primary">Post note!</button>
+             </div>
+           </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+       </div><!-- /.modal -->
+
+       <div class="modal fade" id="noteread" tabindex="-1" role="dialog" aria-labelledby="noteRead" aria-hidden="true">
+        <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+             </div>
+             <div class="modal-body">
+               <form id="signupForm" role="form">
+                  <div>
+                     <p id = "leaversname">note name </p>
+                  </div>
+                 <div>
+                    <p id = "notedata">note body goes here</p>
+                 </div>
+             </div>
+           </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+       </div><!-- /.modal -->
+
+       <div class="modal fade" id="toolTip" tabindex="-1" role="dialog" aria-labelledby="toolTip" aria-hidden="true">
+        <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+             </div>
+             <div class="modal-body">
+                  <div>
+                     <h3>Drag and drop those pin icons to create notes.</h3>
+                  </div>
+                 <div>
+                    <h3>Single click on pins to open them!</h3>
+                 </div>
+             </div>
+           </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+       </div><!-- /.modal -->
+
+
+   </div>
+
+    <script src="{% static '/life/bootstrap.min.js' %}"></script>
+    <script src="{% static '/life/map.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3bt6opXtgKxFUYVtlkjymkQTjxXZRWic&libraries=places&callback=initMap"
+           async defer></script>
+  </body>
 </html>
