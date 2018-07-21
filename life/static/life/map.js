@@ -21,8 +21,9 @@ $("#mapwrapper").width(window.innerWidth).height(window.innerHeight*.95);
 
 function parseNotes(data){
   for (var i=0; i < data.length; i++){
-     var note = data[i];
-     var name = String(note.username);
+     var note = data[i].fields;
+    console.log(note);
+     var name = String(note.username); //wtf dude x2
      var latitude = parseFloat(note.lat);
      var longitude = parseFloat(note.long);
      var latlong = String(latitude)+ String(longitude);
@@ -70,6 +71,7 @@ function refresh(){
     var refresh = "/life/refresh";
     var jqxhr = $.get(refresh, function(data) {
      }).done(function(data) {
+        console.log(data);
         parseNotes(data);
      })
       .fail(function() {
@@ -275,18 +277,19 @@ function initMap() {
       });
 
 
-      $("#postNote").on("click", function(evt){
+      $("#postnote").on("click", function(evt){
          var note = $("#note")["0"].value;
          note = note.trim();
-         var formData = $("#noteForm").serialize();
-         formData += "&longitude=" + String(clickedLong);
-         formData += "&latitude=" + String(clickedLat);
-         formData += "&map_ID=" + String(CURRENT_MAP_ID);
-         formData += "&note=" + String(note);
-         $.post('/life/postNote', formData, function(data){
+         var formData = {
+           note: String(note),
+           long: clickedLong,
+           lat: clickedLat,
+         }
+         $.post('/life/postnote', JSON.stringify(formData), function(data){
             $("#newNote").modal('hide');
             refresh();
          });
+        //set the fields to blank
          $("#name").val(" ");
          $("#note").val(" ");
       });

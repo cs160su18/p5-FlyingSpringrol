@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'p5-FlyingSpringrol-aronowb14191029.codeanyapp.com']
 
-
+CSRF_COOKIE_SECURE = False
 # Application definition
 
 INSTALLED_APPS = [
